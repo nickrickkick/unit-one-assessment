@@ -3,7 +3,7 @@ console.log("A valid password must: ");
 console.log("be at least 10 spaces long.");
 console.log("have at least 1 capatial letter and lower case letter.");
 console.log("have at least 1 number or symbol.");
-
+/**  
 const readline = require('readline').createInterface({
     input: process.stdin,
     output: process.stdout
@@ -18,3 +18,29 @@ const readline = require('readline').createInterface({
     console.log(`Hey there ${password}!`);
     readline.close();
   });
+ */
+  var readline = require('readline');
+  var Writable = require('stream').Writable;
+  
+  var mutableStdout = new Writable({
+    write: function(chunk, encoding, callback) {
+      if (!this.muted)
+        process.stdout.write(chunk, encoding);
+      callback();
+    }
+  });
+  
+  mutableStdout.muted = false;
+  
+  var rl = readline.createInterface({
+    input: process.stdin,
+    output: mutableStdout,
+    terminal: true
+  });
+  
+  rl.question('Password: ', function(password) {
+    console.log('\nPassword is ' + password);
+    rl.close();
+  });
+  
+  mutableStdout.muted = true;
