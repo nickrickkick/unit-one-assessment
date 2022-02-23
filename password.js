@@ -50,10 +50,9 @@ const readline = require('readline').createInterface({
         if (character === character.toUpperCase()){
             capatial = true;
         }
-        if (character === !NaN){
+        if (!isNaN(character * 1)){
             numOrSymbol = true;
         }
-
     }
     if (password.length >= 10 && capatial === true && numOrSymbol === true ){
         console.log("password is valid");
