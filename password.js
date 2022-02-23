@@ -59,6 +59,9 @@ const readline = require('readline').createInterface({
     }
     if (password.length >= 10 && capatial === true && numOrSymbol === true ){
         console.log("password is valid");
+        var turtle = String(" /      \  |  o | \n|        |/ ___\| \n|_________/     \n|_|_| |_|_|");
+        console.log(turtle);
+
       } else if (password.length < 10 && capatial === true && numOrSymbol === true ) {
         console.log("password is invalid. you were under 10 spaces.");
       } else if (password.length >= 10 && capatial === false && numOrSymbol === true ){
