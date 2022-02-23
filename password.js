@@ -19,7 +19,6 @@ const readline = require('readline').createInterface({
     readline.close();
   });
  */
-  var readline = require('readline');
   var Writable = require('stream').Writable;
   
   var mutableStdout = new Writable({
@@ -32,15 +31,15 @@ const readline = require('readline').createInterface({
   
   mutableStdout.muted = false;
   
-  var rl = readline.createInterface({
+  var readline = require('readline').createInterface({
     input: process.stdin,
     output: mutableStdout,
     terminal: true
   });
   
-  rl.question('Password: ', function(password) {
+  readline.question('Password: ', function(password) {
     console.log('\nPassword is ' + password);
-    rl.close();
+    readline.close();
   });
   
   mutableStdout.muted = true;
