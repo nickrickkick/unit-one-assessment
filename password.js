@@ -46,12 +46,15 @@ const readline = require('readline').createInterface({
      
     for (let i = 0; i < password.length; i++){
         character = password.charAt(i);
-              
-        if (character === character.toUpperCase()){
-            capatial = true;
-        }
+        var charChecker = password.charAt(i);
+        
         if (!isNaN(character * 1)){
             numOrSymbol = true;
+        }else {
+            if (character === charChecker.toUpperCase()){
+                capatial = true;
+            }
+           
         }
     }
     if (password.length >= 10 && capatial === true && numOrSymbol === true ){
