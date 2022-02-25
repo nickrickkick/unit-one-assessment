@@ -2,7 +2,8 @@ console.log("hello User, we welcome you to our Password Validator Tool");
 console.log("A valid password must: ");
 console.log("be at least 10 spaces long.");
 console.log("have at least 1 capatial letter.");
-console.log("have at least 1 number or symbol.");
+console.log("have at least 1 number");
+console.log("have at least 1 lower case letter.");
 //this was the way to have the user give input.
 /**  
 const readline = require('readline').createInterface({
@@ -23,6 +24,7 @@ const readline = require('readline').createInterface({
 // this has the user input hidden so others cant see what they are typing.
   var capatial = false;
   var numOrSymbol = false;
+  var lower = false;
   var character = '';
   var Writable = require('stream').Writable;
   
@@ -54,10 +56,13 @@ const readline = require('readline').createInterface({
             if (character === charChecker.toUpperCase()){
                 capatial = true;
             }
+            if (character === charChecker.toLowerCase()){
+              lower = true;
+            }
            
         }
     }
-    if (password.length >= 10 && capatial === true && numOrSymbol === true ){
+    if (password.length >= 10 && capatial === true && numOrSymbol === true && lower === true){
         console.log("password is valid");
         var turtle = String(" /      \  |  o | \n|        |/ ___\| \n|_________/     \n|_|_| |_|_|");
         console.log(turtle);
@@ -80,7 +85,7 @@ const readline = require('readline').createInterface({
           var sadFace = String("________________________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶________\n____________________¶¶¶___________________¶¶¶¶_____\n________________¶¶¶_________________________¶¶¶¶___\n______________¶¶______________________________¶¶¶__\n___________¶¶¶_________________________________¶¶¶_\n_________¶¶_____________________________________¶¶¶\n________¶¶_________¶¶¶¶¶___________¶¶¶¶¶_________¶¶\n______¶¶__________¶¶¶¶¶¶__________¶¶¶¶¶¶_________¶¶\n_____¶¶___________¶¶¶¶____________¶¶¶¶___________¶¶\n____¶¶___________________________________________¶¶\n___¶¶___________________________________________¶¶_\n__¶¶____________________¶¶¶¶____________________¶¶_\n_¶¶_______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶______________¶¶__\n_¶¶____________¶¶¶¶___________¶¶¶¶¶___________¶¶___\n¶¶¶_________¶¶¶__________________¶¶__________¶¶____\n¶¶_________¶______________________¶¶________¶¶_____\n¶¶¶______¶________________________¶¶_______¶¶______\n¶¶¶_____¶_________________________¶¶_____¶¶________\n_¶¶¶___________________________________¶¶__________\n__¶¶¶________________________________¶¶____________\n___¶¶¶____________________________¶¶_______________\n____¶¶¶¶______________________¶¶¶__________________\n_______¶¶¶¶¶_____________¶¶¶¶¶_____________________");
           console.log(sadFace);
       }
-    console.log('\nPassword is ' + password);
+   // console.log('\nPassword is ' + password);
     readline.close();
   });
   
