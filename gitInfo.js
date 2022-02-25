@@ -46,7 +46,7 @@ var gitCloneDefinition = "git clone is to create a clone of the repostiory into 
 */
 
 //CODE HERE
-var gitStatusDefinition = "";
+var gitStatusDefinition = "well show what files you can still add to the get repository that are in the same space as it.";
 
 //////////////////PROBLEM 6////////////////////
 /*
@@ -58,6 +58,8 @@ var gitStatusDefinition = "";
 */
 
 //CODE HERE
+var gitAddDefinition = "git add is a way to add a file to the git repository.";
+var gitAddCode = "git add ."; // this will add all files.
 
 //////////////////PROBLEM 7////////////////////
 /*
@@ -69,6 +71,8 @@ var gitStatusDefinition = "";
 */
 
 //CODE HERE
+var gitCommitDefinition = "git commit is a way to snapshot your work at that moment so you can see the stage of your file and use it to see when bugs were put into the system.";
+var gitCommitCode = "git commit -am initial commit";
 
 
 //////////////////PROBLEM 8////////////////////
@@ -78,3 +82,4 @@ var gitStatusDefinition = "";
 */
 
 //CODE HERE
+var gitPushDefinition = "it is a way to push your new file into the remote or to the master branch.";
